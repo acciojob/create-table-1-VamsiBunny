@@ -13,7 +13,6 @@ function insert_Row() {
     newRow.appendChild(newCell2);
     
     console.log("New row inserted:", newRow);
-    
-    
-    table.prepend(newRow);
+
+    table.insertBefore(newRow, table.firstChild);
 }
