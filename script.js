@@ -5,5 +5,6 @@ function insert_Row() {
         <td>New Cell1</td>
         <td>New Cell2</td>
     `;
+	  console.log(newRow); 
     table.prepend(newRow); 
 }
