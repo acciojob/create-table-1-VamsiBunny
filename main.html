@@ -2,39 +2,47 @@
 <html>
 
 <head>
-	<meta charset="utf-8" /> 
-	<title>Insert row in a table</title> 
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <title>Insert row in a table</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<table id="sampleTable" border="1">
+  <table id="sampleTable" border="1">
     <tr><td>Row1 cell1</td><td>Row1 cell2</td></tr>
     <tr><td>Row2 cell1</td><td>Row2 cell2</td></tr>
-	</table>
-	<input type="button" onclick="insert_Row()" value="Insert row">  
-	<script type="text/javascript">
+  </table>
+  <input type="button" onclick="insert_Row()" value="Insert row">
+  
+  <script type="text/javascript">
     let table = document.getElementById("sampleTable");
 
     function insert_Row() {
-        let newRow = document.createElement("tr");
+      // Create a new row <tr>
+      let newRow = document.createElement("tr");
 
-        let newCell1 = document.createElement("td");
-        newCell1.textContent = "New Cell1";
-        
-        let newCell2 = document.createElement("td");
-        newCell2.textContent = "New Cell2";
+      // Create the first cell <td> with content "New Cell1"
+      let newCell1 = document.createElement("td");
+      newCell1.textContent = "New Cell1";
 
-        newRow.appendChild(newCell1);
-        newRow.appendChild(newCell2);
-        
-        console.log("Row created:", newRow);
+      // Create the second cell <td> with content "New Cell2"
+      let newCell2 = document.createElement("td");
+      newCell2.textContent = "New Cell2";
 
-        table.prepend(newRow);
-        
-        console.log("Table after row insertion:", table);
+      // Append both cells to the row
+      newRow.appendChild(newCell1);
+      newRow.appendChild(newCell2);
+
+      // Log the row creation for debugging purposes
+      console.log("Row created:", newRow);
+
+      // Prepend the new row to the table
+      table.prepend(newRow);
+
+      // Log the table to check the order after insertion
+      console.log("Table after row insertion:", table.outerHTML);
     }
-	</script>
+  </script>
 </body>
 
 </html>
