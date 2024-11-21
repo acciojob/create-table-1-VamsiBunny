@@ -18,21 +18,18 @@
     let table = document.getElementById("sampleTable");
 
     function insert_Row() {
-      let newRow = document.createElement("tr");
+      // Insert a new row at the top of the table
+      let newRow = table.insertRow(0);  // Inserts at index 0 (top of the table)
 
-      let newCell1 = document.createElement("td");
+      // Create the first cell <td> with content "New Cell1"
+      let newCell1 = newRow.insertCell(0); // Adds cell to newRow
       newCell1.textContent = "New Cell1";
 
-      let newCell2 = document.createElement("td");
+      // Create the second cell <td> with content "New Cell2"
+      let newCell2 = newRow.insertCell(1); // Adds cell to newRow
       newCell2.textContent = "New Cell2";
 
-      newRow.appendChild(newCell1);
-      newRow.appendChild(newCell2);
-
-      console.log("Row created:", newRow);
-
-      table.prepend(newRow);
-
+      // Log the table's HTML to inspect the structure
       console.log("Table after row insertion:", table.outerHTML);
     }
   </script>
